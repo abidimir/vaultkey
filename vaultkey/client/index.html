@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker & Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="src/popup.css">
+</head>
+<body>
+  <!-- Password Extension -->
+  <div class="extension-container">
+    <!-- Header -->
+    <header class="extension-header">
+      <h1 class="header-title" id="appTitle">VaultKey</h1>
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="icon-button" aria-label="Toggle dark mode">
+          <span class="material-icons icon-small">light_mode</span>
+        </button>
+        <button id="supportBtn" class="icon-button" aria-label="Support">
+          <span class="material-icons icon-small">favorite</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="extension-main">
+      <!-- Password Display Section -->
+      <div class="password-display">
+        <div class="password-field-container">
+          <input 
+            type="text" 
+            id="passwordField" 
+            class="password-input" 
+            placeholder="Your password" 
+          />
+          <div class="password-actions">
+            <button 
+              id="toggleVisibility" 
+              class="icon-button" 
+              aria-label="Toggle password visibility"
+            >
+              <span class="material-icons icon-small">visibility</span>
+            </button>
+            <button 
+              id="copyPassword" 
+              class="icon-button" 
+              aria-label="Copy password"
+            >
+              <span class="material-icons icon-small">content_copy</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strength Meter Section -->
+      <div class="strength-meter">
+        <div class="strength-header">
+          <span class="strength-label">Password Strength</span>
+          <span id="strengthText" class="strength-value">None</span>
+        </div>
+        <div class="strength-bar-container">
+          <div id="strengthBar" class="strength-bar"></div>
+        </div>
+        
+        <!-- Compact Length Slider -->
+        <div class="length-compact">
+          <label for="lengthSlider" class="length-label">Length:</label>
+          <input type="range" id="lengthSlider" min="6" max="15" value="10" class="range-slider-compact" />
+          <span id="lengthValue" class="length-value">10</span>
+        </div>
+        
+        <!-- Character Types as Toggle Buttons -->
+        <div class="character-types">
+          <button id="toggleUpper" class="character-type selected" role="checkbox" aria-checked="true">
+            Uppercase
+          </button>
+          <button id="toggleLower" class="character-type selected" role="checkbox" aria-checked="true">
+            Lowercase
+          </button>
+          <button id="toggleNumber" class="character-type selected" role="checkbox" aria-checked="true">
+            Numbers
+          </button>
+          <button id="toggleSymbol" class="character-type selected" role="checkbox" aria-checked="true">
+            Symbols
+          </button>
+          <button id="toggleWhitespace" class="character-type" role="checkbox" aria-checked="false">
+            Whitespace
+          </button>
+          <button id="toggleEmoji" class="character-type" role="checkbox" aria-checked="false">
+            Emojis
+          </button>
+          <button id="toggleAscii" class="character-type" role="checkbox" aria-checked="false">
+            ASCII
+          </button>
+        </div>
+      </div>
+
+      <!-- Options Section removed, slider moved above character type buttons -->
+      
+      <!-- Password History Section -->
+      <div class="password-history">
+        <div class="history-header">
+          <h2 class="history-title">History</h2>
+          <button id="clearHistoryBtn" class="btn btn-icon" aria-label="Clear all history">
+            <span class="material-icons icon-small">delete_sweep</span>
+          </button>
+        </div>
+        
+        <div id="passwordHistoryList" class="history-list">
+          <div class="empty-history">No passwords saved</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Actions -->
+    <footer class="extension-footer">
+      <button id="clearBtn" class="btn btn-secondary">
+        Clear
+      </button>
+      
+      <div class="footer-actions">
+        <button id="generateBtn" class="btn btn-primary">
+          <span class="material-icons icon-small">autorenew</span> Generate
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Success Toast -->
+  <div id="toast" class="toast">
+    <div class="toast-content">
+      <span class="material-icons icon-small toast-icon">check_circle</span>
+      <span id="toastMessage">Password copied to clipboard!</span>
+    </div>
+  </div>
+
+  <script src="src/popup.js"></script>
+</body>
+</html>
