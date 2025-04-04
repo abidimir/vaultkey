@@ -2,7 +2,7 @@
 
 A comprehensive browser extension designed to enhance online password security through intelligent generation, real-time strength evaluation, and user-friendly management tools.
 
-![VaultKey Screenshot](src/icons/icon128.svg)
+![VaultKey Screenshot](vaultkey/src/icons/icon128.svg)
 
 ## Features
 
