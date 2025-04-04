@@ -4,7 +4,7 @@ A comprehensive browser extension designed to enhance online password security t
 
 ![VaultKey Screenshot](vaultkey/src/icons/icon128.svg)
 
-![Download Here](https://addons.mozilla.org/en-US/firefox/addon/vaultkey/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search]
+![Download Here](https://addons.mozilla.org/en-US/firefox/addon/vaultkey/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 
 ## Features
 
